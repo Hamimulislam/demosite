@@ -1,0 +1,11 @@
+/* Added at 05/01/2025 */
+{
+  "css.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "astro": "html"
+  }
+}
