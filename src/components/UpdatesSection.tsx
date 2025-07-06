@@ -19,18 +19,24 @@ export default function UpdatesSection() {
 
         <ul className="space-y-4">
           {latestUpdates.map((update, index) => (
-            <MotionWrapper key={update.name + update.date} delay={index * 0.1}>
-              <li className="flex flex-col md:flex-row md:items-start md:justify-start gap-2 text-sm">
-                <span className="text-muted-foreground w-24 shrink-0">{update.date}</span>
-                <span className="text-foreground">{update.name}</span>
-              </li>
-            </MotionWrapper>
+            <li
+              key={update.name + update.date}
+              className="flex flex-col md:flex-row md:items-start md:justify-start gap-2 text-sm"
+            >
+              <MotionWrapper delay={index * 0.1}>
+                <div className="flex flex-col md:flex-row md:items-start md:justify-start gap-2">
+                  <span className="text-muted-foreground w-24 shrink-0">{update.date}</span>
+                  <span className="text-foreground">{update.name}</span>
+                </div>
+              </MotionWrapper>
+            </li>
           ))}
         </ul>
 
+
         <MotionWrapper delay={0.4}> {/* Delay is 0.4 to match the updates list */}
           <div className="mt-6 text-left">
-            <a href="/updates" className="flex items-center gap-1 text-sm hover:underline">
+            <a href={`${import.meta.env.BASE_URL}updates`} className="flex items-center gap-1 text-sm hover:underline">
               View all updates
               <ArrowRight size={12} className="translate-y-[1px]" />
             </a>
