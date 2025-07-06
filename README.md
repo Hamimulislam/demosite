@@ -1,18 +1,16 @@
-# Modern Portfolio Template
+# Minimal Portfolio Template
 
 A sleek, responsive portfolio website built with **Astro**, **React**, and **Tailwind CSS**, featuring modern animations and stunning glassmorphism effects.
 
 [![Homepage](public/src.png)](https://Hamimulislam.github.io/demosite/)
 
-## 🚀 Demo
+##  Demo
 
-👉 [Live Demo](https://hamimulislam.github.io/demosite)
+ [Live Demo](https://hamimulislam.github.io/demosite)
 
-## 🛠 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
 - Node.js (v18+ recommended)
-- npm / yarn / bun
-
-```
+- npm / bun
