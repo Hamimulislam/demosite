@@ -19,14 +19,14 @@ export default function GlassHeader() {
         >
           {/* Light Mode Logo */}
           <img
-            src="/H_new.svg"
+            src="/demosite//H_new.svg"
             alt="Logo"
             className="h-6 w-6 block dark:hidden"
           />
           
           {/* Dark Mode Logo */}
           <img
-            src="/H_new2.svg"
+            src="/demosite//H_new2.svg"
             alt="Logo"
             className="h-6 w-6 hidden dark:block"
           />

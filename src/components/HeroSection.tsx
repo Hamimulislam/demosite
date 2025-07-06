@@ -119,7 +119,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-transparent-500 to-transparent-200 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
-                src="/03.png"
+                src={`${import.meta.env.BASE_URL}03.png`}
                 alt="Profile"
                 className="w-48 md:w-60 rounded-full relative"
                 style={{ objectFit: "cover" }}
