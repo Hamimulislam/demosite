@@ -11,10 +11,9 @@ const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "rounded-lg border border-border/50 bg-background/80 backdrop-blur-md backdrop-filter shadow-sm dark:bg-card/30 dark:backdrop-blur-md",
+          "rounded-lg border border-border/30 bg-muted/60 dark:bg-muted/40 shadow-sm",
           className
         )}
-        // The whileHover prop has been removed
         {...props}
       />
     );
