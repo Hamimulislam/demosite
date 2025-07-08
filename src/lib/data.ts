@@ -1,5 +1,5 @@
 export const personalInfo = {
-  name: "Hamimul Islam",
+  name: "Hamimul Islam Chowdhury",
   location: "Chattogram, Bangladesh",
   email: "hamimulislam99@gmail.com",
   github: "https://github.com/Hamimulislam",
@@ -54,7 +54,7 @@ export const skills = {
     "Typescript",
     "React.js",
   ],
-  frontendDevelopment: [
+  design: [
     "SOLIDWORKS",
     "AutoCAD",
     "Adobe Illustrator",
@@ -62,7 +62,7 @@ export const skills = {
     "ATOMSK",
     "OVITO",
   ],
-  backendDevelopment: [
+  documentation: [
     "MS Office",
     "LaTeX",
     "Zotero",
@@ -100,6 +100,10 @@ export const publications = [
 ];
 
 export const updates = [
+  {
+    name: "I successfully completed my Thesis Area Examination. I am officially a PhD candidate now!",
+    date: "Sep 2026",
+  },
   {
     name: "I have completed my Internship (Industrial attachment) from Bangladesh Industrial Technical Assistance Centre. (4)",
     date: "Oct 2023",
