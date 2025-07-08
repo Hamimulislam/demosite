@@ -1,11 +1,12 @@
 import React from "react";
 import { skills } from "@/lib/data";
 import { GlassCard } from "./ui/glass-card";
-import { Stack } from '@phosphor-icons/react';
+import { Stack } from "@phosphor-icons/react";
 
+// ✅ Optimized: Removed blur/shadow from repetitive elements
 function SkillTag({ skill }: { skill: string }) {
   return (
-    <div className="px-3 py-1 bg-muted/80 backdrop-blur-sm rounded-md text-sm border border-slate-100/10 shadow-sm">
+    <div className="px-3 py-1 bg-muted rounded-md text-sm border border-slate-200/10 dark:border-slate-100/10">
       {skill}
     </div>
   );
