@@ -1,0 +1,1 @@
+import{j as a}from"./jsx-runtime.D_zvdyIk.js";import{r as m}from"./index.BVOCwoKb.js";import{c as d}from"./utils.CBfrqCZ4.js";import{m as t}from"./proxy.DSkN1x16.js";const e=m.forwardRef(({className:r,...o},s)=>a.jsx(t.div,{ref:s,className:d("rounded-lg border border-border/30 bg-muted/60 dark:bg-muted/40 shadow-sm",r),...o}));e.displayName="GlassCard";export{e as G};
