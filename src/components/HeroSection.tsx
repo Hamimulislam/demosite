@@ -1,147 +1,108 @@
 import { personalInfo } from "@/lib/data";
-import { motion } from "framer-motion";
-import MotionWrapper from "./MotionWrapper";
-import { GithubLogo, LinkedinLogo, MapPinArea, ReadCvLogo, EnvelopeSimple, Files, At } from '@phosphor-icons/react';
+import {
+  EnvelopeSimple,
+  GithubLogo,
+  LinkedinLogo,
+  ReadCvLogo,
+  XLogo,
+  At
+} from "@phosphor-icons/react";
 
 export default function HeroSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
-      <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
-        <motion.div
-          className="flex flex-col md:flex-row md:items-center justify-between mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="text-center md:text-left">
-            <motion.h1
-              className="text-4xl font-bold mb-2"
-              variants={childVariants}
+    <section className="pt-20 pb-8">
+      <div className="container max-w-4xl mx-auto px-6 md:px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
+        {/* Image (shown on top in mobile) */}
+        <div className="shrink-0 order-1 md:order-2">
+          <img
+            src={`${import.meta.env.BASE_URL}01.jpg`}
+            alt="Profile"
+            className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-lg mx-auto md:mx-0"
+          />
+        </div>
+
+        {/* Name and Details */}
+        <div className="flex-1 order-2 md:order-1 text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+            {personalInfo.name}
+          </h1>
+
+          <p className="text-lg text-muted-foreground mb-4">
+            Incoming PhD Student @{" "}
+            {personalInfo.affiliation}
+          </p>
+
+          <div className="flex justify-center md:justify-start gap-3 mb-6">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="px-0"
+              aria-label="Email"
             >
-              {personalInfo.name}{" "}
-            </motion.h1>
-
-            <motion.p
-              className="text-xl text-muted-foreground mb-6"
-              variants={childVariants}
+              <At size={21} weight="duotone" />
+            </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-1"
+              aria-label="LinkedIn"
             >
-              Incoming PhD Student
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col gap-2 items-center md:items-start"
-              variants={containerVariants}
+              <LinkedinLogo size={21} weight="duotone" />
+            </a>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-1"
+              aria-label="GitHub"
             >
-              <motion.div
-                className="flex items-center text-sm text-muted-foreground"
-                variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
-              >
-                <MapPinArea size={20} weight="duotone" className="mr-2"/>
-                {personalInfo.location}
-              </motion.div>
-
-              <motion.a
-                href={`mailto:${personalInfo.email}`}
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-                variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
-              >
-                <EnvelopeSimple size={20} weight="duotone" className="mr-2" />
-                {personalInfo.email}
-              </motion.a>
-
-              <motion.a
-                href={personalInfo.linkedin}
+              <GithubLogo size={21} weight="duotone" />
+            </a>
+            {personalInfo.x && (
+              <a
+                href={personalInfo.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-                variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
+                className="px-1"
+                aria-label="X"
               >
-                <LinkedinLogo size={20} weight="duotone" className="mr-2" />
-                LinkedIn
-              </motion.a>
-
-              <motion.a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-                variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
-              >
-                <GithubLogo size={20} weight="duotone" className="mr-2" />
-                GitHub
-              </motion.a>
-
-              <motion.a
-                href={personalInfo.CV}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-                variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
-              >
-                <ReadCvLogo size={20} weight="duotone" className="mr-2" />
-                CV
-              </motion.a>
-            </motion.div>
+                <XLogo size={21} weight="duotone" />
+              </a>
+            )}
+            <a
+              href={personalInfo.CV}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-1"
+              aria-label="CV"
+            >
+              <ReadCvLogo size={21} weight="duotone" />
+            </a>
           </div>
-
-          <motion.div
-            className="mt-6 md:mt-0 flex justify-center"
-            variants={childVariants}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-transparent-500 to-transparent-200 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-              <img
-                src={`${import.meta.env.BASE_URL}03.png`}
-                alt="Profile"
-                className="w-48 md:w-60 rounded-full relative"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <MotionWrapper>
-          <div className="bg-gradient-to-r from-slate-300/10 to-slate-500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-slate-500/30 dark:border-slate-100/30 shadow-sm">
-            <div className="text-muted-foreground pl-2 py-2 mb-2 relative">
-              <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-zinc-600 to-slate-300 rounded-full"></span>
-              <p className="ml-4">
-                Hello! I'm an incoming PhD student in Micro & Nanoscale Systems Engineering at Louisiana Tech University, where I will be working in Dr. Andrew Peters' lab.
-                My current research focuses on understanding ion transport in solid electrolyte materials, using a blend of molecular simulations and machine learning. Outside of academics, I love spending my free time playing video games or watching TV series.
-              </p>
-              <p className="ml-4 mt-2">
-                If you want to discuss something or need any more information, please feel free to contact me via email.
-              </p>
-            </div>
-          </div>
-        </MotionWrapper>
+        </div>
+      </div>
+      <div className="container max-w-4xl mx-auto px-6 md:px-4 mt-6">
+        <p className="text-muted-foreground text-justify text-md leading-normal">
+          Hello! I'm an incoming PhD student in Micro & Nanoscale Systems Engineering at Louisiana Tech University, 
+            where I will be working in Dr. Andrew Peters' lab. My current research involves the use of advanced atomistic and coarse-grained simulation methods
+              to understand and control ordered soft matter systems. Outside of academics, I love spending my free time playing video games or watching TV series.
+        </p>
+      </div>
+      <div className="container max-w-4xl mx-auto px-6 md:px-4 mt-4">
+        <p className="text-muted-foreground text-justify text-md leading-normal">
+          If you want to discuss something or need any more information, please feel free to contact me 
+            via <div className="relative group inline-block">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="underline underline-offset-2 hover:text-foreground"
+                  >
+                    email
+                  </a>
+                  <span className="absolute top-full mt-1 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+                    hamimulislam99@gmail.com
+                  </span>.
+                </div>
+        </p>
       </div>
     </section>
   );
